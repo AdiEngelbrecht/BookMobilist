@@ -23,6 +23,17 @@ export default {
       },
       backgroundSize: {
         'grid-pattern': '40px 40px',
+      },
+      animation: {
+        'racing-line-slow': 'racing-line 8s linear infinite',
+        'racing-line-medium': 'racing-line 5s linear infinite',
+        'racing-line-fast': 'racing-line 3s linear infinite',
+      },
+      keyframes: {
+        'racing-line': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        }
       }
     },
   },

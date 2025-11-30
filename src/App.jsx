@@ -12,6 +12,7 @@ import DashboardPreview from './components/DashboardPreview';
 import UseCases from './components/UseCases';
 import Terms from './components/Terms';
 import Privacy from './components/Privacy';
+import RealityRacingPitch from './components/RealityRacingPitch';
 
 function App() {
   useEffect(() => {
@@ -56,6 +57,7 @@ function App() {
           } />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/reality-racing" element={<RealityRacingPitch />} />
         </Routes>
         <Footer />
       </div>
