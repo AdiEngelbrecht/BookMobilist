@@ -17,6 +17,12 @@ import {
     Play
 } from 'lucide-react';
 
+// Import model images - Please ensure these files exist in src/assets/
+import model1 from '../assets/model1.png';
+import model2 from '../assets/model2.png';
+import model3 from '../assets/model3.png';
+import model4 from '../assets/model4.png';
+
 const RacingLines = () => {
     return (
         <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
@@ -100,7 +106,7 @@ const RealityRacingPitch = () => {
                         
                         <h1 className="text-6xl md:text-8xl font-display uppercase leading-none mb-6 italic">
                             Phone-Farm Powered <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-red-600">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-red-600 pr-4 py-2 inline-block">
                                 TikTok Growth
                             </span>
                         </h1>
@@ -108,16 +114,6 @@ const RealityRacingPitch = () => {
                         <p className="text-xl md:text-2xl font-mono text-gray-400 mb-8 max-w-2xl border-l-2 border-red-600 pl-6">
                             High-trust, high-output content engine using real U.S. mobile devices. We handle accounts, posting, and content.
                         </p>
-
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <button className="bg-accent text-black px-8 py-4 font-bold uppercase tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 group">
-                                Start a Pilot Program
-                                <Play className="w-4 h-4 fill-current group-hover:translate-x-1 transition-transform" />
-                            </button>
-                            <button className="border border-white/30 px-8 py-4 font-bold uppercase tracking-wider hover:bg-white/10 transition-colors text-white">
-                                See How It Works
-                            </button>
-                        </div>
                     </motion.div>
                 </div>
             </section>
@@ -239,13 +235,21 @@ const RealityRacingPitch = () => {
                             <div className="absolute inset-0 bg-accent/20 blur-3xl rounded-full opacity-20" />
                             <div className="border border-white/10 bg-surface p-8 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 to-accent" />
-                                <h3 className="font-mono text-accent mb-6">TARGET_AUDIENCE_MATRIX</h3>
+                                <h3 className="font-mono text-accent mb-6">AI MODELS EXAMPLES</h3>
                                 {/* Visual representation of avatars */}
                                 <div className="grid grid-cols-2 gap-4">
-                                    {[1, 2, 3, 4].map((n) => (
-                                        <div key={n} className="aspect-square bg-black/50 border border-white/10 flex flex-col items-center justify-center p-4 text-center">
-                                            <Users className="w-8 h-8 text-gray-600 mb-2" />
-                                            <span className="text-xs font-mono text-gray-500">AVATAR_0{n}</span>
+                                    {[
+                                        { img: model1, id: '01' },
+                                        { img: model2, id: '02' },
+                                        { img: model3, id: '03' },
+                                        { img: model4, id: '04' }
+                                    ].map((model, i) => (
+                                        <div key={i} className="aspect-square bg-black/50 border border-white/10 relative overflow-hidden group">
+                                            <img 
+                                                src={model.img} 
+                                                alt={`AI Model Example ${model.id}`}
+                                                className="w-full h-full object-cover opacity-100 transition-opacity duration-500"
+                                            />
                                         </div>
                                     ))}
                                 </div>
@@ -337,12 +341,8 @@ const RealityRacingPitch = () => {
             <section className="py-20 bg-black text-center border-t border-white/10">
                  <div className="container mx-auto px-6">
                     <h2 className="text-4xl md:text-6xl font-display uppercase mb-8 italic text-white">
-                        Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-red-600">Race?</span>
+                        Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-red-600 pr-2">Race?</span>
                     </h2>
-                     <button className="bg-accent text-black px-12 py-5 font-bold uppercase tracking-wider hover:bg-white transition-colors inline-flex items-center gap-3 text-lg">
-                        Start Pilot Program
-                        <Play className="w-5 h-5 fill-current" />
-                    </button>
                  </div>
             </section>
         </div>
